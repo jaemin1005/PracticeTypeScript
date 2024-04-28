@@ -35,3 +35,18 @@ let User = withEZDebug(HardToDebugUser);
 let user = new User(3, 'Emma', 'Gluzman');
 console.log(user.debug());
 //#endregion --Mixin--
+
+//#region --final--
+class MessageQueue{
+  protected constructor(private message: string){}
+}
+
+class BadQueue extends MessageQueue{
+  constructor(private msg : string)
+  {
+    super(msg);
+  }
+}
+
+//let msgQueue = new MessageQueue("Hi");
+let badqueue = new BadQueue("Hello");
