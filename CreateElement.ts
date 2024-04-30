@@ -1,4 +1,4 @@
-var names = [
+let names = [
   "구하림",
   "김보미",
   "김수현",
@@ -21,6 +21,16 @@ var names = [
   "황재민"
 ];
 
+let color = [
+  "Red",
+  "Blue",
+  "Yellow",
+  "Black"
+]
+
+let backgroundColor = "white";
+
+
 let CreateElement = class{
 
   static root : HTMLElement = document.getElementById("root")!;
@@ -35,16 +45,39 @@ let CreateElement = class{
   static AppendListUsingValue([...values])
   {
     const ul = document.createElement("ul");
-    for(let value of values )
+    // for(let value of values )
+    // {
+    //   let li = document.createElement("li");
+    //   li.textContent = value;
+      
+    //   ul.appendChild(li);
+    //   this.root.append(ul);
+    // }
+
+    for(let nIdx = 0 ; nIdx  < values.length ; nIdx++)
     {
       let li = document.createElement("li");
-      li.textContent = value;
+      li.textContent = values[nIdx];
+      let selectColor = color[nIdx % color.length];
+      li.style.color = selectColor
+      li.addEventListener("click", IsVisivbleElement(selectColor));
       ul.appendChild(li);
-
-      this.root.append(ul);
     }
+
+    this.root.appendChild(ul);
   }
 }
 
 // CreateElement.AppendChild();
 CreateElement.AppendListUsingValue(names);
+
+function IsVisivbleElement(selectColor : string)
+{
+  let color = selectColor;
+  let bVisible : boolean = true;
+  return function<K extends HTMLElement>(this : K){
+    bVisible = !bVisible;
+    let strAttrValue = bVisible == true ? color : backgroundColor; 
+    this.style.color = strAttrValue;
+  }
+}

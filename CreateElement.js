@@ -25,6 +25,13 @@ var names = [
     "최유진",
     "황재민"
 ];
+var color = [
+    "Red",
+    "Blue",
+    "Yellow",
+    "Black"
+];
+var backgroundColor = "white";
 var CreateElement = (_a = /** @class */ (function () {
         function class_1() {
         }
@@ -36,13 +43,22 @@ var CreateElement = (_a = /** @class */ (function () {
         class_1.AppendListUsingValue = function (_b) {
             var values = _b.slice(0);
             var ul = document.createElement("ul");
-            for (var _i = 0, values_1 = values; _i < values_1.length; _i++) {
-                var value = values_1[_i];
+            // for(let value of values )
+            // {
+            //   let li = document.createElement("li");
+            //   li.textContent = value;
+            //   ul.appendChild(li);
+            //   this.root.append(ul);
+            // }
+            for (var nIdx = 0; nIdx < values.length; nIdx++) {
                 var li = document.createElement("li");
-                li.textContent = value;
+                li.textContent = values[nIdx];
+                var selectColor = color[nIdx % color.length];
+                li.style.color = selectColor;
+                li.addEventListener("click", IsVisivbleElement(selectColor));
                 ul.appendChild(li);
-                this.root.append(ul);
             }
+            this.root.appendChild(ul);
         };
         return class_1;
     }()),
@@ -51,3 +67,12 @@ var CreateElement = (_a = /** @class */ (function () {
     _a);
 // CreateElement.AppendChild();
 CreateElement.AppendListUsingValue(names);
+function IsVisivbleElement(selectColor) {
+    var color = selectColor;
+    var bVisible = true;
+    return function () {
+        bVisible = !bVisible;
+        var strAttrValue = bVisible == true ? color : backgroundColor;
+        this.style.color = strAttrValue;
+    };
+}
