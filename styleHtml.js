@@ -1,5 +1,6 @@
-var root = document.getElementById("root");
-var blackStyle = {
+"use strict";
+const root = document.getElementById("root");
+let blackStyle = {
     id: "black",
     textContent: "black",
     style: {
@@ -8,7 +9,7 @@ var blackStyle = {
         backgroundColor: "white"
     }
 };
-var whiteStyle = {
+let whiteStyle = {
     id: "white",
     textContent: "white",
     style: {
@@ -17,18 +18,18 @@ var whiteStyle = {
         backgroundColor: "black"
     }
 };
-var childDOM = [blackStyle, whiteStyle];
-for (var _i = 0, childDOM_1 = childDOM; _i < childDOM_1.length; _i++) {
-    var child = childDOM_1[_i];
-    var element = document.createElement("div");
-    var assignObj = Object.assign(element, child);
+const childDOM = [blackStyle, whiteStyle];
+for (let child of childDOM) {
+    const element = document.createElement("div");
+    const assignObj = Object.assign(element, child);
     root.appendChild(assignObj);
 }
-var clickEvent = function () {
-    var bBlack = true;
+let clickEvent = function () {
+    let bBlack = true;
 };
 function test() {
-    var assginObj = Object.assign({}, { id: "jamein" });
+    const assginObj = Object.assign({}, { id: "jamein" });
     return assginObj;
 }
 console.log(test());
+//# sourceMappingURL=styleHtml.js.map
