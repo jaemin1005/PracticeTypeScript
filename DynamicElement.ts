@@ -35,7 +35,6 @@ let containerElement = createDinamicStyle.DynamicElement("div",{textContent : "�
 let itemElement = createDinamicStyle.DynamicElement("div", {textContent : "회색" },{width : "50vw", height: "100vh", backgroundColor: "#b0b0b0", position : "absolute", zIndex : "1" });
 let inputElement = createDinamicStyle.DynamicElement("input",{textContent : "진회색"}, {width : "100px", height : "100px", margin : "50px", backgroundColor : "#808080"});
 
-
 itemElement.appendChild(inputElement);
 containerElement.appendChild(itemElement);
 findBody.appendChild(containerElement);
