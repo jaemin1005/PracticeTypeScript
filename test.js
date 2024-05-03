@@ -1,15 +1,19 @@
 "use strict";
-let Currency = {
-    DEFAULT: "USD",
-    from(value, unit = Currency.DEFAULT) {
-        return { unit, value };
-    }
-};
-let amountDue = {
-    unit: 'JPY',
-    value: 83733.10
-};
-let otherAmountDue = Currency.from(330, 'EUR');
+// type Currency = {
+//   unit : "EUR" | "GBP" | "JPY" | "USD"
+//   value : number
+// }
+// let Currency  = {
+//   DEFAULT : "USD",
+//   from(value:number, unit = Currency.DEFAULT): Currency{
+//     return {unit, value};
+//   }
+// }
+// let amountDue : Currency = {
+//   unit: 'JPY',
+//   value: 83733.10
+// }
+// let otherAmountDue = Currency.from(330, 'EUR');
 function call(f, ...argrs) {
     return f(...argrs);
 }

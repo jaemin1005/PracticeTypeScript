@@ -1,21 +1,21 @@
-type Currency = {
-  unit : "EUR" | "GBP" | "JPY" | "USD"
-  value : number
-}
+// type Currency = {
+//   unit : "EUR" | "GBP" | "JPY" | "USD"
+//   value : number
+// }
 
-let Currency = {
-  DEFAULT : "USD",
-  from(value:number, unit = Currency.DEFAULT): Currency{
-    return {unit, value};
-  }
-}
+// let Currency  = {
+//   DEFAULT : "USD",
+//   from(value:number, unit = Currency.DEFAULT): Currency{
+//     return {unit, value};
+//   }
+// }
 
-let amountDue : Currency = {
-  unit: 'JPY',
-  value: 83733.10
-}
+// let amountDue : Currency = {
+//   unit: 'JPY',
+//   value: 83733.10
+// }
 
-let otherAmountDue = Currency.from(330, 'EUR');
+// let otherAmountDue = Currency.from(330, 'EUR');
 
 function call(f: (...args: any[]) => unknown, ...argrs: unknown[]) : unknown
 {

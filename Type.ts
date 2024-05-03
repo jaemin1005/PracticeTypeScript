@@ -1,3 +1,5 @@
+import { PeerCertificate } from "tls";
+
 type A = 'A';
 type B = 'B';
 type Twelve = 12;
@@ -38,10 +40,6 @@ interface Lifespan{
   death?: Date;
 }
 
-
-//* 왜 먼저 유니온 인터렉션을 먼저 소개 했을까?
-//* 값의 집합(타입의 범위에) 적용된다. ?????????
-//* 값의 집합을 타입이라고 생각하자...
 type PersonSpan = Person & Lifespan;
 type UnionType = Person | Lifespan;
 
@@ -68,10 +66,15 @@ class Cylinder {
   }
 }
 
-const v = typeof Cylinder;
-type T = typeof Cylinder;
+//* 타입 선언, 타입단언
+interface Person { name : string };
 
-declare let fn: T;
-const ceee = new fn();
+const people = ['alice', 'bob', 'jan'].map(name => {
+  const person : Person = {name};
+  return person;
+})
 
-type M = InstanceType<typeof Cylinder>
+const peopleL1 = ['alice', 'bob', 'jan'].map((name) : Person => ({name}));
+
+
+

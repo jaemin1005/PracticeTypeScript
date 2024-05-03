@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Type {
     constructor() {
         this.a = 'A';
@@ -32,6 +33,10 @@ class Cylinder {
         const v = typeof Cylinder;
     }
 }
-const v = typeof Cylinder;
-const ceee = new fn();
+;
+const people = ['alice', 'bob', 'jan'].map(name => {
+    const person = { name };
+    return person;
+});
+const peopleL1 = ['alice', 'bob', 'jan'].map((name) => ({ name }));
 //# sourceMappingURL=Type.js.map
