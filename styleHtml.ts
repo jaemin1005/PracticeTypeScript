@@ -1,4 +1,4 @@
-const root : HTMLElement = document.getElementById("root")!;
+const styleHtmlRoot : HTMLElement = document.getElementById("root")!;
 // const child = root.children[0] as HTMLElement;
 // console.log(child.style.color);
 
@@ -37,7 +37,7 @@ const childDOM : DOMType[] = [blackStyle, whiteStyle];
 for(let child of childDOM){
   const element = document.createElement("div");
   const assignObj =  Object.assign(element, child);
-  root.appendChild(assignObj);
+  styleHtmlRoot.appendChild(assignObj);
 }
 
 let clickEvent = function(){

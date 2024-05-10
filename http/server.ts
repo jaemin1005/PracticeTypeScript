@@ -68,6 +68,48 @@ let server = http.createServer((req, res) => {
         }
       });
     }
+
+    if(url == "/ChampionJson"){
+      fs.readFile("http/champion.json",(err, data) => {
+        if(err){
+          res.writeHead(500, {'Content-Type' : 'text/plain'});
+          res.end('500 - Internal Error');
+          return;
+        }
+        else{
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(data);
+        }
+      });
+    }
+
+    if(url == "/ChampionDetailJson"){
+      fs.readFile("http/championFull.json",(err, data) => {
+        if(err){
+          res.writeHead(500, {'Content-Type' : 'text/plain'});
+          res.end('500 - Internal Error');
+          return;
+        }
+        else{
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(data);
+        }
+      });
+    }
+
+    if(url == "/favicon.ico"){
+      fs.readFile("http/favicon.ico",(err, data) => {
+        if(err){
+          res.writeHead(500, {'Content-Type' : 'text/plain'});
+          res.end('500 - Internal Error');
+          return;
+        }
+        else{
+          res.writeHead(200, { 'Content-Type': 'image/x-icon' });
+          res.end(data);
+        }
+      });
+    }
   }
 
   if(req.method === "POST"){   
