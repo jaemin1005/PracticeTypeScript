@@ -19,7 +19,7 @@ function loadPokemonNames(path : string) {
 
 //const data = loadPokemonNames("./pokemonNames.json");
 
-let server = http.createServer((req,res) => {
+http.createServer((req,res) => {
 
 
   console.log(req.url);

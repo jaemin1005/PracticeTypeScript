@@ -53,8 +53,6 @@ function PokeDex(data : []){
     }
   }
 
-
-
   for(let i = 0 ; i < arrPokeDex.length ; i++){
     arrPokeDex[i].addEventListener("click", clickFunc());
     root?.appendChild(arrPokeDex[i]);
