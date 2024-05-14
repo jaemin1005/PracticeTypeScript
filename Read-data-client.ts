@@ -10,8 +10,6 @@ fetch("http://localhost:3000/data.json", {
 .catch(err => console.log(err));
 
 
-
-
 function PokeDex(data : []){
   let curPokeDex : HTMLElement = document.createElement("div");
   let nIdx = 0;
