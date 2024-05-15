@@ -1,0 +1,18 @@
+{
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/node": "^20.12.11"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "gk",
+  "version": "1.0.0",
+  "main": "CustomClass.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
