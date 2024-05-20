@@ -108,4 +108,4 @@ type PickL1<T, K extends keyof T> = {
 
 type TopNavStateL3 = Pick<State, 'userId'>;
 
-type OmitTest = Omit<State, 'userid' | 'pageTitle'>
+type OmitTest = Omit<State, 'userId' | 'pageTitle'>
