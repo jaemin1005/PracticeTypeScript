@@ -29,7 +29,7 @@ const htmlMarkup = {
 //* JSON을 -> 객체로 -> JSON.parse();
 fs.writeFile(NowDate() + "_htmlMarkUp.json", JSON.stringify(htmlMarkup,null,2), "utf-8",(err) => {
   if(err) throw err;
-  console.log ("쿠궁 쿵 쿠쿠구우구구두구구구궁");
+  console.log ("파일 생성 완료");
 })
 
 

@@ -17,7 +17,6 @@ console.log(testLog);
 //* 완벽이 됬다. JSON 어렵지가 않다. 느껴지면
 //* POST랑 해서 붙어버린다.
 //* JSON 처리한것을 저장하고
-//* 편집한것을 랜더링 하고 ㅎㅎㅎ 
 function test(obj : HtmlMarkup): string {
   let result : string[] = [];
 
